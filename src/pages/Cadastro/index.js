@@ -10,6 +10,10 @@ export default function Cadastro() {
     function irHome() {
         navigation.navigate('Home');
     }
+
+    function irAjuda() {
+        navigation.navigate('Ajuda');
+    }
     //----------------------------------------------------//
 
     return (
@@ -52,10 +56,12 @@ export default function Cadastro() {
                 <Text style={styles.cadastrarText}>Cadastrar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 15 }}>
                 <Text style={styles.registerText1}>Preciso de</Text>
-                <Text style={styles.registerText2}>Ajuda</Text>
-            </TouchableOpacity>
+                <TouchableOpacity onPress={irAjuda}>
+                    <Text style={styles.registerText2}>Ajuda</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }

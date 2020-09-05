@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Login from './src/pages/Login';
 import Home from './src/pages/Home';
 import Cadastro from './src/pages/Cadastro';
+import Ajuda from './src/pages/Cadastro/Ajuda';
 import Perfil from './src/pages/Perfil';
 
 const Stack = createStackNavigator();
@@ -31,6 +32,17 @@ export default function App() {
           component={Cadastro}
           options={{
             title: 'Tela de Login',
+            headerStyle: {
+              backgroundColor: '#191919'
+            },
+            headerTintColor: '#fff'
+          }}
+        />
+        <Stack.Screen
+          name="Ajuda"
+          component={Ajuda}
+          options={{
+            title: 'Voltar para tela de cadastro',
             headerStyle: {
               backgroundColor: '#191919'
             },
