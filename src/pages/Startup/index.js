@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default function Perfil() {
+export default function Startup() {
 
     //----------------------Abrir menu------------------------------//
     const navigation = useNavigation();
@@ -20,7 +20,7 @@ export default function Perfil() {
             </TouchableOpacity>
 
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: 30, color: '#fff' }}>PERFIL</Text>
+                <Text style={{ fontSize: 30, color: '#fff' }}>STARTUP</Text>
             </View>
         </View>
     );

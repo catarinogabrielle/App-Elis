@@ -8,7 +8,7 @@ export default function Ajuda() {
 
         </View>
     );
-} 
+}
 
 const styles = StyleSheet.create({
     container: {
