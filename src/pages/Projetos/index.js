@@ -15,12 +15,14 @@ export default function Projeto() {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={openDrawer}>
-                <Icon name="menu" color="#fff" size={50} style={{ margin: 10 }} />
-            </TouchableOpacity>
+            <View style={{ alignItems: 'flex-end' }}>
+                <TouchableOpacity onPress={openDrawer} style={{ width: 90, height: 90, backgroundColor: '#c4c4c4', borderBottomLeftRadius: 100, alignItems: 'center' }}>
+                    <Icon name="menu" color="#fff" size={40} style={{ marginLeft: 20, marginTop: 15 }} />
+                </TouchableOpacity>
+            </View>
 
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: 30, color: '#fff' }}>PROJETO</Text>
+                <Text style={{ fontSize: 30, color: '#000' }}>PROJETO</Text>
             </View>
         </View>
     );
@@ -29,6 +31,6 @@ export default function Projeto() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#191919',
+        backgroundColor: '#fff',
     },
 });

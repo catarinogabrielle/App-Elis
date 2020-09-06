@@ -16,6 +16,8 @@ import Startup from './src/pages/Startup';
 import Cursos from './src/pages/Cursos';
 import Projetos from './src/pages/Projetos';
 
+import CustonDrawer from './src/components/CustonDrawer';
+
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -72,7 +74,7 @@ function Tabs() {
       })}
       tabBarOptions={{
         style: {
-          backgroundColor: '#cecece'
+          backgroundColor: '#c4c4c4'
         },
         activeTintColor: '#ff0000',
         inactiveTintColor: '#191919'
@@ -86,7 +88,20 @@ function Tabs() {
 
 function Menu() {
   return (
-    <Drawer.Navigator initialRouteName={Perfil}>
+    <Drawer.Navigator
+      initialRouteName={Perfil}
+      drawerContent={CustonDrawer}
+      drawerPosition="right"
+      drawerStyle={{
+        backgroundColor: '#c4c4c4',
+        marginBottom: 10
+      }}
+      drawerContentOptions={{
+        activeTintColor: '#e91e63',
+        activeBackgroundColor: '#ff0',
+        itemStyle: { marginVertical: 10 },
+      }}
+    >
       <Drawer.Screen name="Perfil" component={Perfil} />
       <Drawer.Screen name="Meus projetos" component={Projetos} />
       <Drawer.Screen name="Startup" component={Startup} />
@@ -95,4 +110,3 @@ function Menu() {
     </Drawer.Navigator>
   );
 }
-
