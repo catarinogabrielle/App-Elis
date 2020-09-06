@@ -22,7 +22,7 @@ export default function Cursos() {
             </View>
 
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: 30, color: '#000' }}>CURSOS</Text>
+                <Text style={{ fontSize: 30, color: '#000' }}>Cursos</Text>
             </View>
         </View>
     );
