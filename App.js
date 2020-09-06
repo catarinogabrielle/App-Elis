@@ -1,10 +1,12 @@
 import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Feather';
 import 'react-native-gesture-handler';
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import LinearGradient from 'react-native-linear-gradient'
 
 import Login from './src/pages/Login';
 import Home from './src/pages/Home';
@@ -15,6 +17,7 @@ import Pesquisas from './src/pages/Pesquisas';
 import Startup from './src/pages/Startup';
 import Cursos from './src/pages/Cursos';
 import Projetos from './src/pages/Projetos';
+import Camera from './src/pages/Camera';
 
 import CustonDrawer from './src/components/CustonDrawer';
 
@@ -23,10 +26,10 @@ const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const icons = {
   Home: {
-    name: 'ios-home'
+    name: 'home'
   },
   Perfil: {
-    name: 'ios-person'
+    name: 'user'
   }
 };
 
@@ -69,18 +72,32 @@ function Tabs() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           const { name } = icons[route.name];
-          return <Icon name={name} color={color} size={30} />
+          return <Icon name={name} color={color} size={35} />
         }
       })}
       tabBarOptions={{
         style: {
-          backgroundColor: '#c4c4c4'
+          backgroundColor: '#fff'
         },
-        activeTintColor: '#ff0000',
-        inactiveTintColor: '#191919'
+        activeTintColor: '#9C27B0',
+        inactiveTintColor: '#777',
+        showLabel: false,
       }}
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen
+        name="Camera"
+        component={Camera}
+        options={() => ({
+          tabBarIcon: ({ tintColor }) => (
+            <View>
+              <LinearGradient style={styles.iconTabRound} start={{ x: 0, y: 1 }} end={{ x: 0, y: 0 }} colors={['#D500F9', '#4A148C']}>
+                <Icon name="plus" size={26} color='#FFF' />
+              </LinearGradient>
+            </View>
+          ),
+        })}
+      />
       <Tab.Screen name="Perfil" component={Menu} />
     </Tab.Navigator>
   );
@@ -93,12 +110,11 @@ function Menu() {
       drawerContent={CustonDrawer}
       drawerPosition="right"
       drawerStyle={{
-        backgroundColor: '#c4c4c4',
         marginBottom: 10
       }}
       drawerContentOptions={{
-        activeTintColor: '#e91e63',
-        activeBackgroundColor: '#ff0',
+        activeTintColor: '#9C27B0',
+        activeBackgroundColor: '#cecece',
         itemStyle: { marginVertical: 10 },
       }}
     >
@@ -110,3 +126,20 @@ function Menu() {
     </Drawer.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  iconTabRound: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 6,
+    shadowColor: '#9C27B0',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  }
+});

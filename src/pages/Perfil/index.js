@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default function Perfil() {
 
@@ -26,7 +26,7 @@ export default function Perfil() {
             </View>
 
             <TouchableOpacity style={{ marginLeft: 5, marginTop: 5, position: 'absolute' }} >
-                <Icon name="exit-outline" color="#000" size={40} onPress={Sair} />
+                <Icon name="log-out" color="#000" size={30} onPress={Sair} />
             </TouchableOpacity>
         </View>
     );
@@ -35,6 +35,5 @@ export default function Perfil() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
     },
 });

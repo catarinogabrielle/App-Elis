@@ -22,7 +22,7 @@ export default function Startup() {
             </View>
 
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: 30, color: '#000' }}>STARTUP</Text>
+                <Text style={{ fontSize: 30, color: '#000' }}>Startups</Text>
             </View>
         </View>
     );
@@ -31,6 +31,5 @@ export default function Startup() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
     },
 });

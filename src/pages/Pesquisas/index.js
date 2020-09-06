@@ -22,7 +22,7 @@ export default function Pesquisa() {
             </View>
 
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ fontSize: 30, color: '#000' }}>PESQUISA</Text>
+                <Text style={{ fontSize: 30, color: '#000' }}>Pesquisa</Text>
             </View>
         </View>
     );
@@ -31,6 +31,5 @@ export default function Pesquisa() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
     },
 });
