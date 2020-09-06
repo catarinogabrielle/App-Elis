@@ -79,7 +79,7 @@ function Tabs() {
         style: {
           backgroundColor: '#fff'
         },
-        activeTintColor: '#9C27B0',
+        activeTintColor: '#D500F9',
         inactiveTintColor: '#777',
         showLabel: false,
       }}
@@ -91,7 +91,7 @@ function Tabs() {
         options={() => ({
           tabBarIcon: ({ tintColor }) => (
             <View>
-              <LinearGradient style={styles.iconTabRound} start={{ x: 0, y: 1 }} end={{ x: 0, y: 0 }} colors={['#D500F9', '#4A148C']}>
+              <LinearGradient style={styles.iconTabRound} start={{ x: 0, y: 1 }} end={{ x: 0, y: 0 }} colors={['#D500F9', '#10e1e5']}>
                 <Icon name="plus" size={26} color='#FFF' />
               </LinearGradient>
             </View>
@@ -113,7 +113,7 @@ function Menu() {
         marginBottom: 10
       }}
       drawerContentOptions={{
-        activeTintColor: '#9C27B0',
+        activeTintColor: '#D500F9',
         activeBackgroundColor: '#cecece',
         itemStyle: { marginVertical: 10 },
       }}
