@@ -18,6 +18,7 @@ import Startup from './src/pages/Startup';
 import Cursos from './src/pages/Cursos';
 import Projetos from './src/pages/Projetos';
 import Camera from './src/pages/Camera';
+import Busca from './src/pages/Busca';
 
 import CustonDrawer from './src/components/CustonDrawer';
 
@@ -30,6 +31,12 @@ const icons = {
   },
   Perfil: {
     name: 'user'
+  },
+  Busca: {
+    name: 'search'
+  },
+  Cursos: {
+    name: 'book'
   }
 };
 
@@ -45,7 +52,7 @@ export default function App() {
           options={{
             title: 'Tela de Login',
             headerStyle: {
-              backgroundColor: '#191919'
+              backgroundColor: '#44238B'
             },
             headerTintColor: '#fff'
           }}
@@ -56,7 +63,7 @@ export default function App() {
           options={{
             title: 'Voltar para tela de cadastro',
             headerStyle: {
-              backgroundColor: '#191919'
+              backgroundColor: '#44238B'
             },
             headerTintColor: '#fff'
           }}
@@ -77,7 +84,7 @@ function Tabs() {
       })}
       tabBarOptions={{
         style: {
-          backgroundColor: '#fff'
+          backgroundColor: '#EFEEF3'
         },
         activeTintColor: '#D500F9',
         inactiveTintColor: '#777',
@@ -85,6 +92,7 @@ function Tabs() {
       }}
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Busca" component={Busca} />
       <Tab.Screen
         name="Camera"
         component={Camera}
@@ -98,6 +106,7 @@ function Tabs() {
           ),
         })}
       />
+      <Tab.Screen name="Cursos" component={Cursos} />
       <Tab.Screen name="Perfil" component={Menu} />
     </Tab.Navigator>
   );
@@ -110,12 +119,14 @@ function Menu() {
       drawerContent={CustonDrawer}
       drawerPosition="right"
       drawerStyle={{
-        marginBottom: 10
+        marginBottom: 10,
+        backgroundColor: '#44238B'
       }}
       drawerContentOptions={{
         activeTintColor: '#D500F9',
         activeBackgroundColor: '#cecece',
         itemStyle: { marginVertical: 10 },
+        inactiveTintColor: '#fff'
       }}
     >
       <Drawer.Screen name="Perfil" component={Perfil} />

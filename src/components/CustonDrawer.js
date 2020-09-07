@@ -8,10 +8,10 @@ export default function CustonDrawer(props) {
             <View style={styles.header}>
                 <Image
                     source={require('../img/foto.jpg')}
-                    style={{ width: 80, height: 80, borderRadius: 100, borderColor: '#000', borderWidth: 1 }}
+                    style={{ width: 60, height: 60, borderRadius: 100, borderColor: '#000', borderWidth: 1 }}
                 />
                 <View style={{ height: 80, justifyContent: 'flex-end' }}>
-                    <Text style={{ color: '#000', marginBottom: 10, marginLeft: 12, fontSize: 16 }}>Menu de navegação</Text>
+                    <Text style={{ color: '#10e1e5', marginBottom: 10, marginLeft: 12, fontSize: 16, fontWeight: 'bold' }}>Gabrielle De Castro</Text>
                 </View>
 
             </View>
@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginBottom: 10,
         marginLeft: 20,
+        alignItems: 'flex-end'
     },
 });

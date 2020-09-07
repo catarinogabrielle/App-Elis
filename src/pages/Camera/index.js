@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Camera() {
   const [type, setType] = useState(RNCamera.Constants.Type.back);
-  const [open, setOpen] = useState(false);
 
-  function takePicture() {
-    setOpen(true);
+  //----------------------Navegacao entre telas------------------------------//
+
+  const navigation = useNavigation();
+
+  function irHome() {
+    navigation.navigate('Home');
   }
+
+  //----------------------------------------------------/
 
   return (
     <View style={styles.container}>
-
       <RNCamera
         style={styles.preview}
         type={type}
@@ -29,10 +34,10 @@ export default function Camera() {
           if (status !== 'READY') return <View />;
           return (
             <View
-              style={{ marginBottom: 35, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}
+              style={{ marginBottom: 35, flexDirection: 'row', width: '100%', alignItems: 'center', height: 100, justifyContent: 'center' }}
             >
               <TouchableOpacity
-                onPress={() => takePicture()}
+                onPress={() => { }}
                 style={styles.capture}
               >
                 <Icon name="camera" color="#000" size={40} />
@@ -44,22 +49,14 @@ export default function Camera() {
               >
                 <Icon name="image" color="#000" size={40} />
               </TouchableOpacity>
+
+              <TouchableOpacity onPress={irHome} style={{ left: 20, marginTop: 20 }}>
+                <Icon name="camera-off" color="#fff" size={40} />
+              </TouchableOpacity>
             </View>
           );
         }}
       </RNCamera>
-
-      <Modal animationType="slide" transparent={false} visible={open} >
-        <View style={{ flex: 3, justifyContent: 'center', alignItems: 'center', margin: 20 }}>
-          <TouchableOpacity
-            style={{ margin: 10 }}
-            onPress={() => setOpen(false)}
-          >
-            <Text style={{ fontSize: 24 }}>Fechar</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
-
     </View>
   );
 }
@@ -75,12 +72,12 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   capture: {
-    flex: 0,
+    margin: 20,
     backgroundColor: '#fff',
-    borderRadius: 5,
-    padding: 10,
-    paddingHorizontal: 15,
-    alignSelf: 'center',
-    margin: 20
+    borderRadius: 100,
+    height: 75,
+    width: 75,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
