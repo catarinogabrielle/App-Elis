@@ -18,7 +18,7 @@ import Startup from './src/pages/Startup';
 import Cursos from './src/pages/Cursos';
 import Projetos from './src/pages/Projetos';
 import Camera from './src/pages/Camera';
-import Busca from './src/pages/Busca';
+import Meus from './src/pages/Cursos/meus';
 
 import CustonDrawer from './src/components/CustonDrawer';
 
@@ -32,7 +32,7 @@ const icons = {
   Perfil: {
     name: 'user'
   },
-  Busca: {
+  Pesquisas: {
     name: 'search'
   },
   Cursos: {
@@ -92,7 +92,7 @@ function Tabs() {
       }}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Busca" component={Busca} />
+      <Tab.Screen name="Pesquisas" component={Pesquisas} />
       <Tab.Screen
         name="Camera"
         component={Camera}
@@ -123,17 +123,16 @@ function Menu() {
         backgroundColor: '#44238B'
       }}
       drawerContentOptions={{
-        activeTintColor: '#D500F9',
-        activeBackgroundColor: '#cecece',
+        activeTintColor: '#44238B',
+        activeBackgroundColor: '#10e1e5',
         itemStyle: { marginVertical: 10 },
-        inactiveTintColor: '#fff'
+        inactiveTintColor: '#10e1e5'
       }}
     >
       <Drawer.Screen name="Perfil" component={Perfil} />
       <Drawer.Screen name="Meus projetos" component={Projetos} />
       <Drawer.Screen name="Startup" component={Startup} />
-      <Drawer.Screen name="Cursos " component={Cursos} />
-      <Drawer.Screen name="Pesquisas " component={Pesquisas} />
+      <Drawer.Screen name="Meus cursos " component={Meus} />
     </Drawer.Navigator>
   );
 }

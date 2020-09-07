@@ -42,7 +42,7 @@ export default function Perfil() {
                         style={{ borderRadius: 100, width: 150, height: 150 }}
                     />
 
-                    <ScrollView horizontal={false}>
+                    <View>
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{ fontSize: 34, marginTop: 10, fontWeight: 'bold', color: '#44238B' }}>Gabrielle De Castro</Text>
                             <Text style={{ fontSize: 15, marginTop: 10, color: '#000', marginBottom: 20 }}>Developer/mobile</Text>
@@ -68,11 +68,11 @@ export default function Perfil() {
                                 <Text style={{ fontSize: 19 }}>Curriculo</Text>
                             </TouchableOpacity>
 
-                            <View style={{ flex: 1, width: '90%', marginBottom: 12 }}>
+                            <View style={{ flex: 1, width: '90%', marginBottom: 40 }}>
                                 <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Novidades</Text>
                             </View>
 
-                            <View style={{}}>
+                            <View>
                                 <ScrollView horizontal={true}>
                                     <TouchableOpacity style={styles.box}>
                                         <Image
@@ -81,6 +81,11 @@ export default function Perfil() {
                                         />
                                         <View style={{ backgroundColor: '#EFEEF3', height: 50, top: -13, justifyContent: 'center', borderRadius: 60, width: 50, marginLeft: 40 }}>
                                             <Text style={{ textAlign: 'center' }}>Logo</Text>
+                                        </View>
+
+                                        <View style={{ alignItems: 'center', flex: 1, top: -11 }}>
+                                            <Text style={{ fontSize: 18, color: '#10e1e5' }}>Startup 1</Text>
+                                            <Text style={{ color: '#fff' }}>Descrição</Text>
                                         </View>
                                     </TouchableOpacity>
 
@@ -92,6 +97,11 @@ export default function Perfil() {
                                         <View style={{ backgroundColor: '#EFEEF3', height: 50, top: -13, justifyContent: 'center', borderRadius: 60, width: 50, marginLeft: 40 }}>
                                             <Text style={{ textAlign: 'center' }}>Logo</Text>
                                         </View>
+
+                                        <View style={{ alignItems: 'center', flex: 1, top: -11 }}>
+                                            <Text style={{ fontSize: 18, color: '#10e1e5' }}>Startup 1</Text>
+                                            <Text style={{ color: '#fff' }}>Descrição</Text>
+                                        </View>
                                     </TouchableOpacity>
 
                                     <TouchableOpacity style={styles.box}>
@@ -102,11 +112,16 @@ export default function Perfil() {
                                         <View style={{ backgroundColor: '#EFEEF3', height: 50, top: -13, justifyContent: 'center', borderRadius: 60, width: 50, marginLeft: 40 }}>
                                             <Text style={{ textAlign: 'center' }}>Logo</Text>
                                         </View>
+
+                                        <View style={{ alignItems: 'center', flex: 1, top: -11 }}>
+                                            <Text style={{ fontSize: 18, color: '#10e1e5' }}>Startup 1</Text>
+                                            <Text style={{ color: '#fff' }}>Descrição</Text>
+                                        </View>
                                     </TouchableOpacity>
                                 </ScrollView>
                             </View>
                         </View>
-                    </ScrollView>
+                    </View>
                 </View>
             </View>
         </ImageBackground>
